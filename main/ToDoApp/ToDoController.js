@@ -12,13 +12,18 @@ angular.module('app')
    {list: "Wash the Car.", done: false}
   ];
 
-  $ctrl.add = function() {
+  $ctrl.add = function(list) {
    console.log($ctrl.toDoTasks)
-    $ctrl.toDoTasks.push($ctrl.addTodo)
+    $ctrl.toDoTasks.push({list:$ctrl.addTodo, done: false});
+    // $ctrl.newTasks= '';
+    console.log($ctrl.toDoTasks)
  }
-
-
-  
+ $ctrl.removeTask=function(index){ 
+    $ctrl.toDoTasks.splice(index,1);     
+  }
+  $ctrl.completeTask = (index) => {
+    $ctrl.toDoTasks[index].done = true;
+  };
 
   
 });

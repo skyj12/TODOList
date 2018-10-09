@@ -68,7 +68,7 @@ background-color: #ff1493;
     width: 344px;
     margin-left: 9px;
 }
-.material-icons{
+button.material-icons{
     position: absolute;
-    right: 485px;
+    right:790px;
 }

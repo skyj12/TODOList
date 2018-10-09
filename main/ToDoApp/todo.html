@@ -3,12 +3,12 @@
         <p class="tagline">A place to store the things you have to do!</p>
         <input type="text" placeholder="Filter To Do List" ng-model="$ctrl.filter" class="filterlist">
 <ol> 
-        <li ng-repeat="todos in $ctrl.toDoTasks" ng-class="{ strike: todos.done=== true}"><button ng-disabled="!ctrl.filter" class="completebtn"  ng-if="todos.done === false">Completed</button>
-        {{todos.list}}<i class="material-icons">clear</i></p>
+        <li ng-repeat="todos in $ctrl.toDoTasks | filter:$ctrl.filter"  ng-class="{ strike: todos.done=== true}"><button class="completebtn"  ng-if="todos.done === false" ng-click="$ctrl.completeTask($index)">Completed</button>
+        {{todos.list}}<button class="material-icons"ng-click="$ctrl.removeTask($index)">clear </button> </i></p>
         </li>
     </ol>
     <input type="text" ng-model="$ctrl.addTodo" placeholder="Add your to do" class="Itemsadd">
 </br>
-<button ng-click="$ctrl.add()" class="addbtn">ADD</button>
+<button ng-click="$ctrl.add(list)" class="addbtn" >ADD</button>
 
 </form>
