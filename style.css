@@ -70,5 +70,11 @@ background-color: #ff1493;
 }
 button.material-icons{
     position: absolute;
-    right:790px;
+    right:467px;
+}
+@media screen and (min-width:600px) {
+    button.material-icons{
+        position: absolute;
+        right:113px;
+    }
 }
